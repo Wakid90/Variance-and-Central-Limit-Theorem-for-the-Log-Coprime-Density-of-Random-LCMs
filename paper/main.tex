@@ -14,11 +14,13 @@
 
 % Figures / tables
 \usepackage{graphicx}
+\usepackage{eso-pic}       % Persistent preprint identifier in the left margin
 \graphicspath{{figures/}}
 \usepackage{booktabs}
 \usepackage[section]{placeins}   % For \FloatBarrier
 
 % Refs
+\usepackage{xurl}          % Line breaking for long repository URLs
 \usepackage{xcolor}
 \usepackage[colorlinks=true, linkcolor=blue!50!black, citecolor=blue!50!black,
             urlcolor=blue!50!black,
@@ -26,7 +28,8 @@
             pdfauthor={Muhamad Wakid},
             pdfsubject={Probabilistic number theory; martingale central limit theorems},
             pdfkeywords={random LCM, coprime density, central limit theorem, martingale, Hall-Heyde, probabilistic number theory},
-            pdfcreator={LaTeX with hyperref}]{hyperref}
+            pdfcreator={LaTeX with hyperref},
+            pdfinfo={DOI={10.5281/zenodo.21339769}}]{hyperref}
 \usepackage{orcidlink}
 
 % Theorem environments
@@ -52,10 +55,24 @@
 
 \title{Variance and Central Limit Theorem for the\\[2pt]
 Log Coprime Density of Random LCMs}
-\author{Muhamad Wakid\,\orcidlink{0009-0008-6274-778X}\\[3pt]\small Independent researcher}
-\date{April 2026}
+\author{Muhamad Wakid\,\orcidlink{0009-0008-6274-778X}}
+\date{}
 
 \begin{document}
+
+% First-page-only vertical preprint identifier, centred in the left margin.
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{%
+    \put(\LenToUnit{0.25in},\LenToUnit{0.5\paperheight}){%
+      \makebox(0,0){%
+        \rotatebox{90}{%
+          \sffamily\normalsize\bfseries\color{black!65}%
+          DOI: 10.5281/zenodo.21339769 [Preprint] 13 Jul 2026%
+        }%
+      }%
+    }%
+  }%
+}
 
 \maketitle
 \thispagestyle{plain}
@@ -896,13 +913,7 @@ $B(c)$ & $0.9595$ & $0.4255$ & $0.1379$ & $0.0499$ \\
 We have established, in the joint regime $k = \lfloor cM \rfloor$, $M \to \infty$, fixed $c > 0$, the variance asymptotic $M \ln M \cdot s_k^2 \to B(c) = (e^c - 1)^{-1} - (e^{2c} - 1)^{-1}$ (Theorem~\ref{thm:variance}) and a central limit theorem for the standardised log coprime density (Theorem~\ref{thm:CLT}). The variance theorem is proved by a direct diagonal / off-diagonal decomposition, with the off-diagonal term controlled by an exact covariance identity (Lemma~\ref{lem:beta-pq-exact}) valid for prime pairs $(p, q)$ with $pq > M$. The CLT is proved via the Hall--Heyde martingale central limit theorem applied to the Doob filtration. Its two nontrivial ingredients are a uniform increment bound combining coupon-collector concentration with a sieve-geometric observation (Theorem~\ref{thm:supnorm}), and a conditional-variance concentration resting on per-prime moment bounds, the covariance estimate of Lemma~\ref{lem:bd2}, and an $L^2$ Minkowski bound that controls all prime-pair cross terms. Together with the first-order results of the companion paper~\cite{wakid1}, these give a two-moment asymptotic theory for the coprime density in this regime.
 
 \paragraph{Data and code availability.}
-The numerical code, fixed random seed, generated figures, and machine-readable outputs underlying Table~\ref{tab:variance} and Figures~\ref{fig:variance}--\ref{fig:CLT} are provided in the accompanying public repository. The repository includes a one-command reproduction script and an arbitrary-precision validation mode for the exact variance formula.
-
-\paragraph{Funding.}
-The author received no specific funding for this work.
-
-\paragraph{Conflict of interest.}
-The author declares no conflict of interest.
+The numerical code, fixed random seed, generated figures, and machine-readable outputs underlying Table~\ref{tab:variance} and Figures~\ref{fig:variance}--\ref{fig:CLT} are available in the \href{https://github.com/Wakid90/Variance-and-Central-Limit-Theorem-for-the-Log-Coprime-Density-of-Random-LCMs}{public GitHub repository}. The repository includes a one-command reproduction script and an arbitrary-precision validation mode for the exact variance formula.
 
 \begin{thebibliography}{99}
 
