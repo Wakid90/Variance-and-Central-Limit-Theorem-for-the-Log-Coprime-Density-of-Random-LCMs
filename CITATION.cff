@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the preprint below."
+title: "Variance and Central Limit Theorem for the Log Coprime Density of Random LCMs"
+authors:
+  - family-names: Wakid
+    given-names: Muhamad
+    orcid: "https://orcid.org/0009-0008-6274-778X"
+    email: prowakid@gmail.com
+year: 2026
+doi: 10.5281/zenodo.21339769
+url: "https://doi.org/10.5281/zenodo.21339769"
+repository-code: "https://github.com/Wakid90/Variance-and-Central-Limit-Theorem-for-the-Log-Coprime-Density-of-Random-LCMs"
+type: generic
+license: MIT
+keywords:
+  - random LCM
+  - coprime density
+  - Euler totient
+  - central limit theorem
+  - Berry-Esseen bound
+  - martingale central limit theorem
+  - probabilistic number theory
